@@ -14,7 +14,7 @@ const SearchBody = () => {
             .then(data => (setCharacters(data.data.slice(0, 5))))
     }, [name])
 
-    const onSuggest = (text) => {
+    const onSuggest = ({text}: { text: any }) => {
         setTyping(false)
         setName(text)
     }
@@ -46,7 +46,7 @@ const SearchBody = () => {
                     <div className="">
                         {characters.map(character => {
                             return (
-                                <div className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1" onClick={() => {onSuggest(character.attributes.name), setSlug(character.attributes.slug)}}>
+                                <div className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1" onClick={() => {onSuggest({text: character.attributes.name}), setSlug(character.attributes.slug)}}>
                                     <h1 className="ml-3">{character.attributes.name}</h1>
                                 </div>
                             )
