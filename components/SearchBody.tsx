@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {log} from "util";
 
 const SearchBody = () => {
-    const [characters, setCharacters] = useState();
+    const [characters, setCharacters] = useState([]);
     const [name, setName] = useState('');
     const [typing, setTyping] = useState(true);
     const [slug, setSlug] = useState('');
