@@ -46,11 +46,15 @@ const SearchBody = () => {
                     <div className="">
                         {characters.map(character => {
                             // @ts-ignore
-                            return (
-                                <div className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1" onClick={() => {onSuggest({text: character.attributes.name}), setSlug(character.attributes.slug)}}>
+                            let div = <>
+                                <div className="bg-white opacity-50 hover:opacity-100 rounded mr-32 ml-8 mt-1"
+                                     onClick={() => {
+                                         onSuggest({text: character.attributes.name}), setSlug(character.attributes.slug)
+                                     }}>
                                     <h1 className="ml-3">{character.attributes.name}</h1>
                                 </div>
-                            )
+                            </>;
+                            return div
                         })}
                     </div>
                 ) : (null)}
